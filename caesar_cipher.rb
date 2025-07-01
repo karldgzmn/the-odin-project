@@ -1,19 +1,18 @@
 def caesar_cipher(text, shift)
-    upper = ('A'..'Z').to_a
-    lower = ('a'..'z').to_a
+  uppercase = ('A'..'Z').to_a
+  lowercase = ('a'..'z').to_a
 
-    result = text.chars.map do |char|
-      if upper.include?(char)
-        upper[(upper.index(char) + shift) % 26]
-      elsif lower.include?(char)
-        lower[(lower.index(char) + shift) % 26]
-      else
+  result = text.chars.map do |char|
+    if uppercase.include?(char)
+      new_index = (uppercase.index(char) + shift) % 26
+      uppercase[new_index]
+    elsif lowercase.include?(char)
+      new_index = (lowercase.index(char) + shift) % 26
+      lowercase[new_index]
+    else
       char
     end
   end
-end
+  result
 
-  result.join
-end
-
-puts caesar_cipher("What a string!", 5)
+  puts caesar_cipher("What a string!", 5)
