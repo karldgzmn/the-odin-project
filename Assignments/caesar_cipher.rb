@@ -12,7 +12,7 @@ def caesar_cipher(text, shift)
     else
       char
     end
-  end
-  result
-
+    end
+  result.join
+end
   puts caesar_cipher("What a string!", 5)
